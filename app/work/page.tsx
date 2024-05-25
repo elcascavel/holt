@@ -42,7 +42,7 @@ export default function WorkPage() {
           Backend Developer, July 2022 - September 2022 (Internship)
         </p>
         <p>
-          I interned at <a href="https://www.xplora.pt/">Xplora</a> where I
+          I interned at <a href="https://goxplora.com/">Xplora</a> where I
           developed API endpoints. I worked with Laravel.
         </p>
       </div>
