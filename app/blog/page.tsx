@@ -1,15 +1,15 @@
-import { BlogPosts } from 'app/components/posts'
+import { BlogPosts } from "app/components/posts";
 
 export const metadata = {
-  title: 'Blog',
-  description: 'Read my blog.',
-}
+  title: "Blog",
+  description: "Read my blog.",
+};
 
-export default function Page() {
+export default function BlogPage() {
   return (
     <section>
-      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">My Blog</h1>
+      <h1 className="font-medium text-2xl mb-8 tracking-tighter">blog</h1>
       <BlogPosts />
     </section>
-  )
+  );
 }
