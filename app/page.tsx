@@ -7,9 +7,11 @@ export default function Page() {
       <h1 className="mb-8 text-2xl font-medium tracking-tighter">
         {homeData.intro.title}
       </h1>
-      <p className="prose prose-neutral dark:prose-invert">
-        {homeData.intro.description}
-      </p>
+      <div className="prose prose-neutral dark:prose-invert">
+        {homeData.intro.description.map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
+        ))}
+      </div>
       <div className="my-8">
         <BlogPosts />
       </div>
