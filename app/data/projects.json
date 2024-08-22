@@ -10,7 +10,7 @@
         "projects": [
           {
             "title": "Communication and Multimedia's Student Group Website",
-            "skills": ["Project Management", "Laravel", "Vue.js"],
+            "skills": ["Laravel", "Vue"],
             "details": "I spearheaded the development of a new website for the student group as the head of the department. You can access it here. I utilized Vue, Tailwind, and Laravel. Working alongside two contributors, I led by teaching them Git and GitHub, conducting regular check-ins to ensure the project stayed on track, and assigning tasks effectively.",
             "link": "https://necm.utad.pt/"
           },
