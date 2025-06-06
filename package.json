@@ -2,7 +2,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "prepare": "husky",
     "build": "next build",
     "start": "next start",
     "format": "biome format . --write",
@@ -32,8 +31,6 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@catppuccin/tailwindcss": "^1.0.0-beta.2",
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
-    "husky": "^9.1.7"
+    "lefthook": "^1.11.13"
   }
 }
