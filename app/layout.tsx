@@ -2,14 +2,33 @@ import "./global.css";
 import { JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Header from "./components/layout/header";
-import Footer from "./components/layout/footer";
+import Header from "../components/ui/layout/header";
+import Footer from "../components/ui/layout/footer";
+import type { Metadata } from "next/types";
+import { SITE_URL } from "./sitemap";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: "Simão Amaral",
+  description: "Simão Amaral's personal website",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const cx = (...classes: string[]) => classes.filter(Boolean).join(" ");
 
 const jetBrains = JetBrains_Mono({
   subsets: ["latin"],
-  weight: "300",
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export default function RootLayout({
@@ -20,13 +39,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cx(
-        "text-black bg-ctp-base dark:text-white dark:bg-ctp-base",
-        jetBrains.className
-      )}
+      className={cx("scrollbar min-h-screen", jetBrains.className)}
     >
-      <body className="antialiased max-w-2xl mx-4 mt-8 lg:mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+      <body className="mx-auto bg-drac-nosferatu-900 text-drac-aro-50 flex min-h-screen max-w-[90%] flex-col md:max-w-[80%]">
+        <main className="flex-1 px-0 py-8 md:px-5">
           <Header />
           {children}
           <Footer />
