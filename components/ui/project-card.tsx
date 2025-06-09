@@ -1,11 +1,7 @@
 import type { ProjectMetadata } from "@/lib/types/common";
 import Link from "next/link";
 import Tag from "./tag";
-import {
-  IconEyeCancel,
-  IconImageInPicture,
-  IconPhoto,
-} from "@tabler/icons-react";
+import { IconPhoto } from "@tabler/icons-react";
 
 export default function ProjectCard({ project }: { project: ProjectMetadata }) {
   return (
