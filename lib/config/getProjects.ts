@@ -6,12 +6,12 @@ import type { ProjectMetadata } from "../types/common";
 
 export const projects = [
   {
-    ...gtaBbMetadata,
-    slug: `all/${gtaBbMetadata.slug}`,
-  },
-  {
     ...vendettaMetadata,
     slug: `all/${vendettaMetadata.slug}`,
+  },
+  {
+    ...gtaBbMetadata,
+    slug: `all/${gtaBbMetadata.slug}`,
   },
   {
     ...necmMetadata,
