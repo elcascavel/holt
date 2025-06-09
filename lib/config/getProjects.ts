@@ -6,16 +6,16 @@ import type { ProjectMetadata } from "../types/common";
 
 export const projects = [
   {
-    ...necmMetadata,
-    slug: `all/${necmMetadata.slug}`,
-  },
-  {
     ...gtaBbMetadata,
     slug: `all/${gtaBbMetadata.slug}`,
   },
   {
     ...vendettaMetadata,
     slug: `all/${vendettaMetadata.slug}`,
+  },
+  {
+    ...necmMetadata,
+    slug: `all/${necmMetadata.slug}`,
   },
 ].filter((p) => p.published) as (ProjectMetadata & { slug: string })[];
 
