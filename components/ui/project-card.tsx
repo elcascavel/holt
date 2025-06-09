@@ -1,6 +1,11 @@
 import type { ProjectMetadata } from "@/lib/types/common";
 import Link from "next/link";
 import Tag from "./tag";
+import {
+  IconEyeCancel,
+  IconImageInPicture,
+  IconPhoto,
+} from "@tabler/icons-react";
 
 export default function ProjectCard({ project }: { project: ProjectMetadata }) {
   return (
@@ -8,12 +13,19 @@ export default function ProjectCard({ project }: { project: ProjectMetadata }) {
       href={`/projects/${project.slug}`}
       className="border border-drac-nosferatu-700 bg-drac-nosferatu-800 hover:border-drac-marcelin-400 focus-visible:border-drac-marcelin-400 group block overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl focus:outline-none"
     >
-      {project.image && (
+      {project.image ? (
         <div className="overflow-hidden">
           <img
             src={project.image?.url}
             alt={project.image?.alt}
             className="aspect-video w-full transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      ) : (
+        <div className="aspect-video w-full bg-drac-nosferatu-700 flex items-center justify-center text-drac-aro-50">
+          <IconPhoto
+            className="h-12 w-12 text-drac-aro-400"
+            aria-label="No image available"
           />
         </div>
       )}
