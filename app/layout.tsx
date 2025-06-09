@@ -1,28 +1,16 @@
 import "./global.css";
-import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-import { Navbar } from "./components/nav";
+import { JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Footer from "./components/footer";
-import { baseUrl } from "./sitemap";
+import Header from "../components/ui/layout/header";
+import Footer from "../components/ui/layout/footer";
+import type { Metadata } from "next/types";
+import { SITE_URL } from "./sitemap";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(baseUrl),
-  title: {
-    default: "Simão Amaral",
-    template: "%s | Simão Amaral",
-  },
-  description: "This is my portfolio.",
-  openGraph: {
-    title: "Simão Amaral's Portfolio",
-    description: "This is my portfolio.",
-    url: baseUrl,
-    siteName: "Simão Amaral's Portfolio",
-    locale: "en_US",
-    type: "website",
-  },
+  metadataBase: new URL(SITE_URL),
+  title: "Simão Amaral",
+  description: "Simão Amaral's personal website",
   robots: {
     index: true,
     follow: true,
@@ -38,6 +26,11 @@ export const metadata: Metadata = {
 
 const cx = (...classes: string[]) => classes.filter(Boolean).join(" ");
 
+const jetBrains = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -46,20 +39,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cx(
-        "text-black bg-white dark:text-white dark:bg-zinc-900",
-        GeistSans.variable,
-        GeistMono.variable
-      )}
+      className={cx("scrollbar min-h-screen", jetBrains.className)}
     >
-      <body className="antialiased max-w-2xl mx-4 mt-8 lg:mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-          <Navbar />
-          {children}
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
-        </main>
+      <body className="mx-auto bg-drac-nosferatu-900 text-drac-aro-50 flex min-h-screen max-w-[90%] flex-col md:max-w-[80%]">
+        <Header />
+        <main className="flex-1 px-0 py-8 md:px-5">{children}</main>
+        <Footer />
       </body>
     </html>
   );

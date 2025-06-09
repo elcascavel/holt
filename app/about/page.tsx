@@ -1,0 +1,26 @@
+import AboutContent from "@/app/content/about.mdx";
+import SectionTitle from "@/components/ui/section-title";
+import Socials from "@/components/ui/socials";
+import { IconUser } from "@tabler/icons-react";
+import Image from "next/image";
+
+export default function Page() {
+  return (
+    <main className="flex flex-col max-w-5xl mx-auto px-4 py-8">
+      <SectionTitle icon={IconUser}>About Me</SectionTitle>
+      <div className="flex flex-row items-center gap-8">
+        <Image
+          src="/assets/me/cascavel.webp"
+          alt="Me in GTA style"
+          width={500}
+          height={300}
+          className="rounded-lg shadow-lg w-md"
+        />
+        <aside className="flex-1">
+          <AboutContent />
+        </aside>
+      </div>
+      <Socials />
+    </main>
+  );
+}
