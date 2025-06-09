@@ -145,7 +145,7 @@ export default function GitHubStats() {
   }, []);
 
   return (
-    <main className="flex flex-col space-y-10 p-5">
+    <main className="flex flex-col mx-auto max-w-6xl space-y-12 px-0 py-8 md:space-y-16 md:px-4 md:py-12">
       <div>
         <div className="flex flex-row justify-between">
           <SectionTitle icon={IconHeart}>Featured Projects</SectionTitle>
@@ -156,7 +156,7 @@ export default function GitHubStats() {
             View all projects
           </a>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {featuredProjects.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}

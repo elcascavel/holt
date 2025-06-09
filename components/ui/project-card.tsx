@@ -18,7 +18,7 @@ export default function ProjectCard({ project }: { project: ProjectMetadata }) {
           <img
             src={project.image?.url}
             alt={project.image?.alt}
-            className="aspect-video w-full transition-transform duration-300 group-hover:scale-105"
+            className="aspect-video w-full"
           />
         </div>
       ) : (
@@ -31,8 +31,9 @@ export default function ProjectCard({ project }: { project: ProjectMetadata }) {
       )}
 
       <div className="space-y-3 p-5">
-        <h3 className="text-drac-aro-50 group-hover:text-drac-marcelin-400 text-xl font-semibold transition-colors">
+        <h3 className="flex justify-between items-center text-drac-aro-50 group-hover:text-drac-marcelin-400 text-xl font-semibold transition-colors">
           {project.title}
+          <span className="text-drac-aro-200 text-sm">{project.date}</span>
         </h3>
         <p className="text-drac-aro-50 line-clamp-2 text-sm">
           {project.description}
