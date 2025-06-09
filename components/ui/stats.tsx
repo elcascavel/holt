@@ -40,7 +40,6 @@ const StatBox: React.FC<StatBoxProps & { loading?: boolean }> = ({
 
 type StatsGridProps = {
   stats: { icon: string; text: string }[];
-  columns?: number;
 };
 
 const StatsGrid: React.FC<StatsGridProps & { loading?: boolean }> = ({

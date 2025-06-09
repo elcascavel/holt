@@ -16,6 +16,7 @@ export interface ProjectMetadata {
 export interface NavItem {
   title: string;
   href: string;
+  tooltip?: string;
 }
 
 export interface Image {

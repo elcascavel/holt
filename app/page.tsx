@@ -121,7 +121,7 @@ export default function GitHubStats() {
                     rel="noopener noreferrer"
                   >
                     <span className="inline-block text-sm text-drac-marcelin-400 hover:bg-drac-marcelin-500 hover:text-drac-aro-50 transition-colors hover:animate-pulse">
-                      View stats
+                      View on WakaTime
                     </span>
                   </a>
                 </div>
