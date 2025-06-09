@@ -45,6 +45,8 @@ export default function RootLayout({
         <Header />
         <main className="flex-1 px-0 py-8 md:px-5">{children}</main>
         <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
