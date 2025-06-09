@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import StatsGrid from "../components/ui/stats";
 import { IconActivity } from "@tabler/icons-react";
 import type { Stats } from "../lib/types/common";
+import SectionTitle from "@/components/ui/section-title";
 
 export default function GitHubStats() {
   const [stats, setStats] = useState<Stats[]>([]);
@@ -143,10 +144,7 @@ export default function GitHubStats() {
 
   return (
     <main className="p-5">
-      <h1 className="mb-8 flex items-center gap-3 text-3xl font-bold">
-        <IconActivity size={32} className="text-drac-marcelin-400 mr-2" />
-        <span>Stats</span>
-      </h1>
+      <SectionTitle icon={IconActivity}>Stats</SectionTitle>
       <StatsGrid stats={loading ? skeletonStats : stats} loading={loading} />
     </main>
   );
