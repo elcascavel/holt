@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 import StatsGrid from "../components/ui/stats";
-import { IconActivity } from "@tabler/icons-react";
+import { IconActivity, IconHeart } from "@tabler/icons-react";
 import type { Stats } from "../lib/types/common";
 import SectionTitle from "@/components/ui/section-title";
+import { featuredProjects } from "@/lib/config/getProjects";
+import ProjectCard from "@/components/ui/project-card";
 
 export default function GitHubStats() {
   const [stats, setStats] = useState<Stats[]>([]);
@@ -143,9 +145,27 @@ export default function GitHubStats() {
   }, []);
 
   return (
-    <main className="p-5">
-      <SectionTitle icon={IconActivity}>Stats</SectionTitle>
-      <StatsGrid stats={loading ? skeletonStats : stats} loading={loading} />
+    <main className="flex flex-col space-y-10 p-5">
+      <div>
+        <div className="flex flex-row justify-between">
+          <SectionTitle icon={IconHeart}>Featured Projects</SectionTitle>
+          <a
+            href="/projects"
+            className="text-sm text-drac-marcelin-400 hover:text-drac-marcelin-500 transition-colors"
+          >
+            View all projects
+          </a>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {featuredProjects.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
+          ))}
+        </div>
+      </div>
+      <div>
+        <SectionTitle icon={IconActivity}>Stats</SectionTitle>
+        <StatsGrid stats={loading ? skeletonStats : stats} loading={loading} />
+      </div>
     </main>
   );
 }

@@ -9,7 +9,7 @@ export const metadata = {
     alt: "Screenshot of the NECM website homepage",
   },
   published: true,
-  featured: true,
+  featured: false,
   tags: ["laravel", "vue", "tailwindcss"],
   links: [
     {

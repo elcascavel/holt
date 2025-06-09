@@ -18,3 +18,7 @@ export const projects = [
     slug: `all/${vendettaMetadata.slug}`,
   },
 ].filter((p) => p.published) as (ProjectMetadata & { slug: string })[];
+
+export const featuredProjects = projects.filter(
+  (p) => p.featured
+) as (ProjectMetadata & { slug: string })[];
