@@ -16,7 +16,7 @@ const SectionTitle = ({
       className={`mb-8 flex items-center gap-3 text-3xl font-bold ${className}`}
     >
       <Icon className="h-6 w-6 text-drac-marcelin-400" />
-      <span>{children}</span>
+      <div>{children}</div>
     </h2>
   );
 };

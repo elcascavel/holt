@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 import StatsGrid from "../components/ui/stats";
-import { IconActivity, IconHeart } from "@tabler/icons-react";
+import { IconActivity, IconHeart, IconMan } from "@tabler/icons-react";
 import type { Stats } from "../lib/types/common";
 import SectionTitle from "@/components/ui/section-title";
 import { featuredProjects } from "@/lib/config/getProjects";
 import ProjectCard from "@/components/ui/project-card";
+import IntroContent from "@/app/content/intro.mdx";
+import NameTransition from "@/components/ui/name-transition";
 
 export default function GitHubStats() {
   const [stats, setStats] = useState<Stats[]>([]);
@@ -147,20 +149,24 @@ export default function GitHubStats() {
   return (
     <main className="flex flex-col mx-auto max-w-6xl space-y-12 px-0 py-8 md:space-y-16 md:px-4 md:py-12">
       <div>
-        <div className="flex flex-row justify-between">
-          <SectionTitle icon={IconHeart}>Featured Projects</SectionTitle>
-          <a
-            href="/projects"
-            className="text-sm text-drac-marcelin-400 hover:text-drac-marcelin-500 transition-colors"
-          >
-            View all projects
-          </a>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {featuredProjects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
-          ))}
-        </div>
+        <SectionTitle icon={IconMan}>
+          <NameTransition />
+        </SectionTitle>
+        <IntroContent />
+      </div>
+      <div className="flex flex-row justify-between">
+        <SectionTitle icon={IconHeart}>Featured Projects</SectionTitle>
+        <a
+          href="/projects"
+          className="text-sm text-drac-marcelin-400 hover:text-drac-marcelin-500 transition-colors"
+        >
+          View all projects
+        </a>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {featuredProjects.map((project) => (
+          <ProjectCard key={project.slug} project={project} />
+        ))}
       </div>
       <div>
         <SectionTitle icon={IconActivity}>Stats</SectionTitle>
