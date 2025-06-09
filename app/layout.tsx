@@ -42,11 +42,9 @@ export default function RootLayout({
       className={cx("scrollbar min-h-screen", jetBrains.className)}
     >
       <body className="mx-auto bg-drac-nosferatu-900 text-drac-aro-50 flex min-h-screen max-w-[90%] flex-col md:max-w-[80%]">
-        <main className="flex-1 px-0 py-8 md:px-5">
-          <Header />
-          {children}
-          <Footer />
-        </main>
+        <Header />
+        <main className="flex-1 px-0 py-8 md:px-5">{children}</main>
+        <Footer />
       </body>
     </html>
   );
