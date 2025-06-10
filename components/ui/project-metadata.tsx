@@ -29,6 +29,12 @@ const iconMap: Record<string, React.ElementType> = {
 const ProjectMetadataDisplay: React.FC<MetadataDisplayProps> = ({ data }) => {
   const { title, date, links, tags, image } = data;
 
+  const formattedDate = new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  }).format(new Date(date));
+
   const getIconForLink = (text: string) => {
     const key = text.toLowerCase();
     return iconMap[key] || iconMap.default;
@@ -44,12 +50,14 @@ const ProjectMetadataDisplay: React.FC<MetadataDisplayProps> = ({ data }) => {
         />
       )}
       <div className="flex flex-col gap-2 text-sm">
-        <h1 className="text-4xl font-bold text-drac-marcelin-400">{title}</h1>
+        <h1 className="text-2xl md:text-3xl font-bold text-drac-marcelin-400">
+          {title}
+        </h1>
         <div className="flex items-center gap-2">
           {date && (
             <>
               <TbCalendar size={16} />
-              <span>{new Date(date).toLocaleDateString()}</span>
+              <span>{formattedDate}</span>
             </>
           )}
           <div className="flex flex-col items-center gap-2 text-sm">
