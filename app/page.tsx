@@ -9,6 +9,7 @@ import { featuredProjects } from "@/lib/config/getProjects";
 import ProjectCard from "@/components/ui/project-card";
 import IntroContent from "@/app/content/intro.mdx";
 import NameTransition from "@/components/ui/name-transition";
+import Link from "next/link";
 
 export default function GitHubStats() {
   const [stats, setStats] = useState<Stats[]>([]);
@@ -49,15 +50,15 @@ export default function GitHubStats() {
               <div className="flex flex-col gap-4">
                 <p>
                   On GitHub, I was starred{" "}
-                  <span className="font-bold text-drac-marcelin-400">
+                  <span className="font-bold text-drac-marcelin-200">
                     {githubData.totalStars}
                   </span>{" "}
                   times, and forked{" "}
-                  <span className="font-bold text-drac-marcelin-400">
+                  <span className="font-bold text-drac-marcelin-200">
                     {githubData.totalForks}
                   </span>
                   , across{" "}
-                  <span className="font-bold text-drac-marcelin-400">
+                  <span className="font-bold text-drac-marcelin-200">
                     {githubData.publicRepos}
                   </span>{" "}
                   public repos.
@@ -73,7 +74,7 @@ export default function GitHubStats() {
                       </span>{" "}
                       <a
                         href={commit.href}
-                        className="hover:text-drac-marcelin-500 transition-colors truncate"
+                        className="hover:text-drac-marcelin-400 transition-colors truncate"
                         target="_blank"
                         rel="noopener noreferrer"
                         title={commit.message}
@@ -90,7 +91,7 @@ export default function GitHubStats() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span className="mt-2 inline-block text-sm text-drac-marcelin-400 hover:bg-drac-marcelin-500 hover:text-drac-aro-50 transition-colors hover:animate-pulse">
+                    <span className="mt-2 inline-block text-sm text-drac-marcelin-200 hover:bg-drac-marcelin-400 hover:text-drac-aro-50 transition-colors hover:animate-pulse underline underline-offset-2 decoration-dotted decoration-2">
                       View on Github
                     </span>
                   </a>
@@ -104,15 +105,15 @@ export default function GitHubStats() {
               <div className="flex flex-col gap-1 h-full justify-between">
                 <p>
                   I have coded for a total of{" "}
-                  <span className="font-bold text-drac-marcelin-400">
+                  <span className="font-bold text-drac-marcelin-200">
                     {wakatimeData.data.human_readable_total}
                   </span>{" "}
                   since using WakaTime. My most used language is{" "}
-                  <span className="font-bold text-drac-marcelin-400">
+                  <span className="font-bold text-drac-marcelin-200">
                     {mainLang.name}
                   </span>
                   , accounting for{" "}
-                  <span className="font-bold text-drac-marcelin-400">
+                  <span className="font-bold text-drac-marcelin-200">
                     {mainLang.percent}%
                   </span>{" "}
                   of my coding time.
@@ -125,7 +126,7 @@ export default function GitHubStats() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span className="inline-block text-sm text-drac-marcelin-400 hover:bg-drac-marcelin-500 hover:text-drac-aro-50 transition-colors hover:animate-pulse">
+                    <span className="mt-2 inline-block text-sm text-drac-marcelin-200 hover:bg-drac-marcelin-400 hover:text-drac-aro-50 transition-colors hover:animate-pulse underline underline-offset-2 decoration-dotted decoration-2">
                       View on WakaTime
                     </span>
                   </a>
@@ -156,12 +157,12 @@ export default function GitHubStats() {
       </div>
       <div className="flex flex-row justify-between items-center">
         <SectionTitle icon={IconHeart}>Featured Projects</SectionTitle>
-        <a
+        <Link
           href="/projects"
-          className="hidden sm:inline text-sm text-drac-marcelin-400 hover:text-drac-marcelin-500 transition-colors"
+          className="hidden sm:inline text-sm text-drac-marcelin-200 hover:text-drac-marcelin-400 transition-colors"
         >
           View all projects
-        </a>
+        </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {featuredProjects.map((project) => (
@@ -169,12 +170,12 @@ export default function GitHubStats() {
         ))}
       </div>
       <div className="flex justify-center w-full sm:hidden">
-        <a
+        <Link
           href="/projects"
-          className="text-sm text-drac-marcelin-400 hover:text-drac-marcelin-500 transition-colors"
+          className="text-sm text-drac-marcelin-200 hover:text-drac-marcelin-400 transition-colors"
         >
           View all projects
-        </a>
+        </Link>
       </div>
       <div>
         <SectionTitle icon={IconActivity}>Stats</SectionTitle>
