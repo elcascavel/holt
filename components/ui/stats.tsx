@@ -31,7 +31,7 @@ const StatBox: React.FC<StatBoxProps & { loading?: boolean }> = ({
   loading,
 }) => (
   <div className="flex flex-col items-center rounded-lg shadow-lg p-4 min-h-32 h-full w-full overflow-hidden border border-drac-nosferatu-700 bg-drac-nosferatu-800">
-    <div>{icon}</div>
+    {icon}
     <div className="text-sm mt-4 h-full w-full">
       {loading ? <Skeleton className="h-4 w-full" /> : text}
     </div>
@@ -46,7 +46,7 @@ const StatsGrid: React.FC<StatsGridProps & { loading?: boolean }> = ({
   stats,
   loading,
 }) => (
-  <div className="grid gap-11 grid-cols-2 mx-auto">
+  <div className="grid gap-11 grid-cols-1 md:grid-cols-2 mx-auto">
     {stats.map((stat, idx) => (
       <StatBox
         // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>

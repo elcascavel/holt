@@ -154,11 +154,11 @@ export default function GitHubStats() {
         </SectionTitle>
         <IntroContent />
       </div>
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between items-center">
         <SectionTitle icon={IconHeart}>Featured Projects</SectionTitle>
         <a
           href="/projects"
-          className="text-sm text-drac-marcelin-400 hover:text-drac-marcelin-500 transition-colors"
+          className="hidden sm:inline text-sm text-drac-marcelin-400 hover:text-drac-marcelin-500 transition-colors"
         >
           View all projects
         </a>
@@ -167,6 +167,14 @@ export default function GitHubStats() {
         {featuredProjects.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
+      </div>
+      <div className="flex justify-center w-full sm:hidden">
+        <a
+          href="/projects"
+          className="text-sm text-drac-marcelin-400 hover:text-drac-marcelin-500 transition-colors"
+        >
+          View all projects
+        </a>
       </div>
       <div>
         <SectionTitle icon={IconActivity}>Stats</SectionTitle>
