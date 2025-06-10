@@ -13,6 +13,15 @@ export interface ProjectMetadata {
   links?: ProjectLink[];
 }
 
+export interface BlogMetadata {
+  title: string;
+  description: string;
+  date: string;
+  slug: string;
+  image?: Image;
+  published: boolean;
+}
+
 export interface NavItem {
   title: string;
   href: string;
