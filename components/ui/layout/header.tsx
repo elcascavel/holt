@@ -36,7 +36,7 @@ const Header: React.FC = () => {
             alt="holt logo"
             width={250}
             height={250}
-            className="w-16 h-16 rounded-full object-cover"
+            className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover"
           />
         </Link>
         <p className="font-bold text-drac-aro-50 hidden md:block">
