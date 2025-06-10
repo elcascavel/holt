@@ -50,13 +50,25 @@ const Header: React.FC = () => {
         {navItems.map((item) => {
           const isExternal = item.href.endsWith(".pdf");
 
+          if (isExternal) {
+            return (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-drac-aro-50 hover:text-drac-marcelin-200 transition-colors text-sm md:text-base"
+              >
+                {item.title}
+              </a>
+            );
+          }
+
           return (
             <Link
               key={item.href}
               href={item.href}
-              target={isExternal ? "_blank" : undefined}
-              rel={isExternal ? "noopener noreferrer" : undefined}
-              className="text-drac-aro-50 hover:text-drac-marcelin-400 transition-colors text-sm md:text-base"
+              className="text-drac-aro-50 hover:text-drac-marcelin-200 transition-colors text-sm md:text-base"
             >
               {item.title}
             </Link>
