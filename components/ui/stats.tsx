@@ -46,7 +46,7 @@ const StatsGrid: React.FC<StatsGridProps & { loading?: boolean }> = ({
   stats,
   loading,
 }) => (
-  <div className="grid gap-11 grid-cols-2 mx-auto">
+  <div className="grid gap-11 grid-cols-1 md:grid-cols-2 mx-auto">
     {stats.map((stat, idx) => (
       <StatBox
         // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
