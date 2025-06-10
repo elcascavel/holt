@@ -20,7 +20,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`header sticky top-0 z-10 flex h-24 items-center rounded-b-lg justify-between p-5 select-none transition-all duration-300 ${
+      className={`header top-0 z-10 flex h-24 items-center rounded-b-lg justify-between p-5 select-none transition-all duration-300 md:sticky ${
         isScrolled
           ? "backdrop-blur-md bg-drac-nosferatu-800/30 "
           : "bg-drac-nosferatu-800 shadow-lg"
@@ -39,7 +39,7 @@ const Header: React.FC = () => {
             className="w-16 h-16 rounded-full object-cover"
           />
         </Link>
-        <p className="font-bold text-drac-aro-50">
+        <p className="font-bold text-drac-aro-50 hidden md:block">
           Simão /{" "}
           <span className="bg-drac-marcelin-400 text-drac-nosferatu-900 py-1 px-2 rounded-lg">
             Cascavel
@@ -56,7 +56,7 @@ const Header: React.FC = () => {
               href={item.href}
               target={isExternal ? "_blank" : undefined}
               rel={isExternal ? "noopener noreferrer" : undefined}
-              className="text-drac-aro-50 hover:text-drac-marcelin-400 transition-colors"
+              className="text-drac-aro-50 hover:text-drac-marcelin-400 transition-colors text-sm md:text-base"
             >
               {item.title}
             </Link>
