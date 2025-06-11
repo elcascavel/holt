@@ -13,10 +13,10 @@ const SectionTitle = ({
 }: SectionTitleProps) => {
   return (
     <h2
-      className={`mb-8 flex items-center gap-3 text-2xl md:text-3xl font-bold ${className}`}
+      className={`flex items-center gap-x-3 text-2xl md:text-3xl font-bold ${className}`}
     >
       <Icon className="h-6 w-6 text-drac-marcelin-400" />
-      <div>{children}</div>
+      <span>{children}</span>
     </h2>
   );
 };

@@ -6,9 +6,9 @@ import Image from "next/image";
 
 export default function Page() {
   return (
-    <main className="flex flex-col max-w-2xl md:max-w-5xl mx-auto px-4 py-8">
+    <div className="flex flex-col max-w-2xl md:max-w-5xl mx-auto px-4 py-8">
       <SectionTitle icon={IconUser}>About Me</SectionTitle>
-      <div className="flex flex-col md:flex-row items-center gap-8">
+      <div className="flex flex-col md:flex-row items-center gap-8 mt-8">
         <Image
           src="/assets/me/cascavel.webp"
           alt="Me in GTA style"
@@ -21,6 +21,6 @@ export default function Page() {
         </aside>
       </div>
       <Socials />
-    </main>
+    </div>
   );
 }
