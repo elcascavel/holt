@@ -1,6 +1,7 @@
 import { metadata as necmMetadata } from "@/app/projects/all/necm/metadata";
 import { metadata as gtaBbMetadata } from "@/app/projects/all/gta-bb/metadata";
 import { metadata as vendettaMetadata } from "@/app/projects/all/vendetta/metadata";
+import { metadata as altvRpMetadata } from "@/app/projects/all/altv-rp/metadata";
 
 import type { ProjectMetadata } from "../types/common";
 
@@ -12,6 +13,10 @@ export const projects = [
   {
     ...gtaBbMetadata,
     slug: `all/${gtaBbMetadata.slug}`,
+  },
+  {
+    ...altvRpMetadata,
+    slug: `all/${altvRpMetadata.slug}`,
   },
   {
     ...necmMetadata,
