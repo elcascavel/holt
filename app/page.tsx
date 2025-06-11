@@ -63,9 +63,9 @@ export default function GitHubStats() {
                   </span>{" "}
                   public repos.
                 </p>
-                <div>
+                <ul className="list-none space-y-1">
                   {latestCommits.map((commit) => (
-                    <div
+                    <li
                       key={commit.sha}
                       className="flex items-center gap-1 mb-1 overflow-hidden min-w-0"
                     >
@@ -81,10 +81,10 @@ export default function GitHubStats() {
                       >
                         {commit.message}
                       </a>
-                    </div>
+                    </li>
                   ))}
-                </div>
-                <div className="flex flex-col gap-y-1">
+                </ul>
+                <footer className="flex flex-col gap-y-1">
                   <hr className="border-drac-nosferatu-700" />
                   <a
                     href="https://github.com/elcascavel/"
@@ -95,7 +95,7 @@ export default function GitHubStats() {
                       View on Github
                     </span>
                   </a>
-                </div>
+                </footer>
               </div>
             ),
           },
@@ -118,7 +118,7 @@ export default function GitHubStats() {
                   </span>{" "}
                   of my coding time.
                 </p>
-                <div className="flex flex-col gap-y-1">
+                <footer className="flex flex-col gap-y-1">
                   <hr className="border-drac-nosferatu-700" />
                   <a
                     href="https://wakatime.com/@elcascavel"
@@ -130,7 +130,7 @@ export default function GitHubStats() {
                       View on WakaTime
                     </span>
                   </a>
-                </div>
+                </footer>
               </div>
             ),
           },
@@ -148,39 +148,46 @@ export default function GitHubStats() {
   }, []);
 
   return (
-    <main className="flex flex-col mx-auto max-w-6xl space-y-12 px-0 py-8 md:space-y-16 md:px-4 md:py-12">
-      <div>
+    <div className="flex flex-col mx-auto max-w-6xl space-y-12 px-0 py-8 md:space-y-16 md:px-4 md:py-12">
+      <section>
         <SectionTitle icon={IconMan}>
           <NameTransition />
         </SectionTitle>
         <IntroContent />
-      </div>
-      <div className="flex flex-row justify-between items-center">
-        <SectionTitle icon={IconHeart}>Featured Projects</SectionTitle>
-        <Link
-          href="/projects"
-          className="hidden sm:inline text-sm text-drac-marcelin-200 hover:text-drac-marcelin-400 transition-colors"
-        >
-          View all projects
-        </Link>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {featuredProjects.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
-        ))}
-      </div>
-      <div className="flex justify-center w-full sm:hidden">
+      </section>
+
+      <section>
+        <div className="flex flex-row justify-between items-center">
+          <SectionTitle className="m-0" icon={IconHeart}>
+            Featured Projects
+          </SectionTitle>
+          <Link
+            href="/projects"
+            className="hidden sm:inline text-sm text-drac-marcelin-200 hover:text-drac-marcelin-400 transition-colors"
+          >
+            View all projects
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          {featuredProjects.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
+          ))}
+        </div>
+      </section>
+
+      <nav className="flex justify-center w-full sm:hidden">
         <Link
           href="/projects"
           className="text-sm text-drac-marcelin-200 hover:text-drac-marcelin-400 transition-colors"
         >
           View all projects
         </Link>
-      </div>
-      <div>
+      </nav>
+
+      <section>
         <SectionTitle icon={IconActivity}>Stats</SectionTitle>
         <StatsGrid stats={loading ? skeletonStats : stats} loading={loading} />
-      </div>
-    </main>
+      </section>
+    </div>
   );
 }
