@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Making an RP server in alt:V",
+  title: "American Dream Roleplay",
   description:
     "A project to create a roleplay server for Grand Theft Auto V using the alt:V multiplayer modification framework.",
   date: "2024-04-12",
