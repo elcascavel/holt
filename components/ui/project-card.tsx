@@ -14,7 +14,7 @@ export default function ProjectCard({ project }: { project: ProjectMetadata }) {
           <img
             src={project.image?.url}
             alt={project.image?.alt}
-            className="aspect-video w-full"
+            className="bg-drac-nosferatu-700 aspect-video w-full object-contain"
           />
         </div>
       ) : (

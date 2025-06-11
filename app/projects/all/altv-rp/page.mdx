@@ -1,0 +1,88 @@
+import ProjectData from "components/ui/project-metadata.tsx";
+import { metadata } from "./metadata";
+
+<ProjectData data={metadata}/>
+
+# Context
+
+> alt:V is an alternative multiplayer framework for GTA:V and allows developers and players to play on custom servers. These servers can utilize languages such as C# and JavaScript.
+
+I used to be a heavy text roleplayer way before the genre became popular due to voice roleplay servers. People before me played on Habbo but I started my journey on Grand Theft Auto: San Andreas.
+
+I started at around twelve years old, playing on a server called [Los Santos Roleplay](https://community.ls-rp.com/) that utilized a platform called [SA-MP](https://www.sa-mp.mp/) which rivaled [Multi Theft Auto](https://multitheftauto.com/).
+
+It honestly became my favorite hobby and I spent countless hours getting involved in stories, making my own characters roleplaying other people, even making friends outside of the game from different countries. Other *nerds* my age were playing World of Warcraft but I didn't care for gear, I wanted to roleplay different characters!
+
+## The American Dream
+![The American Dream](/assets/projects/ad-1.png)
+
+With the help from a friend, we started developing this server called The American Dream. Unlike platforms like SA-MP, we could use Javascript to write the gamemode. 
+
+I think two months had passed since my layoff and we got to work. I started by making our own chat system.
+
+<figure className="my-6">
+  <img src="/assets/projects/ad-2.png" alt="The chat" className="w-full h-auto rounded shadow" />
+  <figcaption className="mt-2 text-sm text-center text-drac-marcelin-200">The in-game chat system, designed to mimic SA-MP's original chat with distance-based shading and emote support.</figcaption>
+</figure>
+
+
+I wanted to make it as close to the original SA-MP chat as possible, so I used a lot of the same commands and features. The green code represents a system message, white is a normal message for a character speaking in character. This could vary in shade to represent different distances. The further away you were, the darker the shade of grey.
+
+/me commands kept their original purple color. As for the rest, we just went with what felt right.
+
+## Creating Characters
+
+The coolest feature I was working on was the character creation system. I started by just programming it, having no consideration for the UI. It was honestly one of the hardest things I had ever done.
+
+In GTA:V, you need to combine face blends (father and mother), adjust individual facial features with morph targets and then apply things like hair, eye color and overlays. Overlays can be facial hair or eyebrows.
+
+On top of that, I had to program a camera system to switch between different shots (full body and close-up) so you could preview the character properly.
+
+<div className="relative w-full pb-[56.25%] h-0 overflow-hidden">
+<video className="absolute top-0 left-0 w-full h-full" controls loop autoPlay playsInline muted>
+  <source src="/assets/projects/ad-cc.mp4" type="video/mp4"/>
+</video>
+</div>
+
+I built this entire system in Javascript on top of the alt:V API, writing my own camera manager and using native GTA functions for fine-grained appearance control. The camera transitions and the ability to lock the player in place while customizing took a lot of iteration to get right.
+
+The whole system was synced with the UI through a WebView, so that when you moved a slider or selected an option, you'd see the result live on your character.
+It may sound simple now, but writing the whole data flow between client, UI, and server took about a week of trial and error.
+
+Once the system was in an OK state, I started working on the UI. I wanted it to be as intuitive as possible, so I took inspiration from other games like The Sims and started building it out in Figma.
+
+<div className="flex flex-wrap gap-4">
+  <figure className="w-full md:w-[48%]">
+    <img src="/assets/projects/ad-3.png" alt="Character Creation 1" className="w-full h-auto rounded shadow" />
+    <figcaption className="mt-2 text-sm text-center text-drac-marcelin-200">Setting the parents for your character - dark mode</figcaption>
+  </figure>
+  <figure className="w-full md:w-[48%]">
+    <img src="/assets/projects/ad-4.png" alt="Character Creation 2" className="w-full h-auto rounded shadow" />
+    <figcaption className="mt-2 text-sm text-center text-drac-marcelin-200">Setting the parents for your character - light mode</figcaption>
+  </figure>
+</div>
+
+<div className="flex flex-wrap gap-4 mt-4">
+  <figure className="w-full md:w-[48%] flex flex-col justify-between rounded shadow">
+    <img src="/assets/projects/ad-7.png" alt="Character Creation 1" className="w-full h-auto rounded shadow" />
+    <figcaption className="mt-2 text-sm text-center text-drac-marcelin-200">Face feature selection mimicking GTA Online + fine-grained controls at the bottom</figcaption>
+  </figure>
+  <figure className="w-full md:w-[48%]">
+    <img src="/assets/projects/ad-5.png" alt="Character Creation 2" className="w-full h-auto rounded shadow" />
+    <figcaption className="mt-2 text-sm text-center text-drac-marcelin-200">Picking hair and colors!</figcaption>
+  </figure>
+</div>
+
+<div className="flex justify-center mt-4">
+  <figure className="w-full">
+    <img src="/assets/projects/ad-6.png" alt="Character Creation 1" className="w-full h-auto rounded shadow" />
+    <figcaption className="mt-2 text-sm text-center text-drac-marcelin-200">Implemented parent selection in-game using React</figcaption>
+  </figure>
+</div>
+
+## Wrapping Up
+
+Even though we didn't finish the project, building this system taught me a lot.
+
+It started a personal passion, wanting to recreate that roleplay experience I had as a kid but it pushed me to learn a lot. The character creation flow was one of the hardest things I've built, but also one of the most rewarding to see come to life.
+There's still plenty more I would have liked to add, but I'm proud of what we accomplished and how much I learned through the process.
