@@ -5,6 +5,6 @@ export const metadata = {
   date: "2025-06-06",
   slug: "vendetta",
   published: true,
-  featured: true,
+  featured: false,
   tags: ["godot", "gdscript"],
 };
