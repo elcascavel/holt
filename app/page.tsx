@@ -168,7 +168,13 @@ export default function GitHubStats() {
             View all projects
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <div
+          className={`
+    grid gap-6 mt-8
+    grid-cols-1
+    ${featuredProjects.length >= 3 ? "md:grid-cols-3" : "md:grid-cols-2"}
+  `}
+        >
           {featuredProjects.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}

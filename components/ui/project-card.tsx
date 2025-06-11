@@ -29,9 +29,6 @@ export default function ProjectCard({ project }: { project: ProjectMetadata }) {
       <div className="space-y-3 p-5">
         <h3 className="flex justify-between items-center text-drac-aro-50 group-hover:text-drac-marcelin-400 text-xl font-semibold transition-colors">
           {project.title}
-          <span className="text-drac-aro-200 text-sm hidden md:block">
-            {project.date}
-          </span>
         </h3>
         <p className="text-drac-aro-50 line-clamp-2 text-sm">
           {project.description}
