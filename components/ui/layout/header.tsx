@@ -20,7 +20,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`header top-0 z-10 flex h-24 items-center rounded-b-lg justify-between p-5 select-none transition-all duration-300 md:sticky ${
+      className={`header top-0 z-50 flex h-24 items-center rounded-b-lg justify-between p-5 select-none transition-all duration-300 md:sticky ${
         isScrolled
           ? "backdrop-blur-md bg-drac-nosferatu-800/30 "
           : "bg-drac-nosferatu-800 shadow-lg"
