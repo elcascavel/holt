@@ -5,7 +5,7 @@ export const metadata = {
   date: "2024-11-24",
   slug: "gta-bb",
   image: {
-    url: "/assets/projects/gta-bb-logo.webp",
+    url: "https://1kbqkuz15gkrdwbb.public.blob.vercel-storage.com/assets/gta-bb-logo-RvH7rN779HulXhr6LiHktAb6QB0OGu.webp",
     alt: "Austin Vaughn, a character from Grand Theft Auto: Blue & Blood with the logo stamped on it.",
   },
   published: true,

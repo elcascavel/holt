@@ -5,7 +5,7 @@ export const metadata = {
   date: "2022-06-01",
   slug: "necm",
   image: {
-    url: "/assets/projects/necm.webp",
+    url: "https://1kbqkuz15gkrdwbb.public.blob.vercel-storage.com/assets/necm-Clf8IGby45W6gKjnvlD3PsYSEKJ2FK.webp",
     alt: "Screenshot of the NECM website homepage",
   },
   published: true,

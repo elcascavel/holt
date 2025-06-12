@@ -32,7 +32,7 @@ const Header: React.FC = () => {
           className="flex items-center gap-2 text-drac-aro-50 hover:text-drac-marcelin-400 transition-colors"
         >
           <Image
-            src="/assets/me/cascavel.webp"
+            src="https://1kbqkuz15gkrdwbb.public.blob.vercel-storage.com/assets/cascavel-IR9oUxffIY8s3EdcMpNGelGmk2a1Ja.webp"
             alt="holt logo"
             width={250}
             height={250}

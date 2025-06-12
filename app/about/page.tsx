@@ -10,7 +10,7 @@ export default function Page() {
       <SectionTitle icon={IconUser}>About Me</SectionTitle>
       <div className="flex flex-col md:flex-row items-center gap-8 mt-8">
         <Image
-          src="/assets/me/cascavel.webp"
+          src="https://1kbqkuz15gkrdwbb.public.blob.vercel-storage.com/assets/cascavel-IR9oUxffIY8s3EdcMpNGelGmk2a1Ja.webp"
           alt="Me in GTA style"
           width={500}
           height={300}

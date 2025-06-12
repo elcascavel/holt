@@ -5,7 +5,7 @@ export const metadata = {
   date: "2024-04-12",
   slug: "altv-rp",
   image: {
-    url: "/assets/projects/ad-logo.webp",
+    url: "https://1kbqkuz15gkrdwbb.public.blob.vercel-storage.com/assets/ad-logo-ZkkFkxwrY8OzZ2QEfGyZjslMnFdfJs.webp",
     alt: "Our would-be alt:V RP server logo",
   },
   published: true,
