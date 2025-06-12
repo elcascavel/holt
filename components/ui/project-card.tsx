@@ -10,11 +10,21 @@ export default function ProjectCard({ project }: { project: ProjectMetadata }) {
       className="border border-drac-nosferatu-700 bg-drac-nosferatu-800 hover:border-drac-marcelin-400 focus-visible:border-drac-marcelin-400 group block overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl focus:outline-none"
     >
       {project.image ? (
-        <div className="overflow-hidden">
+        <div className="relative overflow-hidden">
           <img
             src={project.image?.url}
             alt={project.image?.alt}
-            className="bg-drac-nosferatu-700 aspect-video w-full object-contain"
+            className="absolute inset-0 w-full h-full object-cover blur-lg scale-110"
+            aria-hidden="true"
+          />
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 z-10 block bg-gradient-to-b from-black/40 via-transparent to-black/40"
+          />
+          <img
+            src={project.image?.url}
+            alt={project.image?.alt}
+            className="relative aspect-video w-full object-contain z-20"
           />
         </div>
       ) : (

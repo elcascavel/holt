@@ -1,0 +1,64 @@
+import ProjectData from "components/ui/project-metadata.tsx";
+import { metadata } from "./metadata";
+
+<ProjectData data={metadata}/>
+
+# Context
+
+> **GTA API** was my first proper REST API project, built in the summer of 2021 to support a Discord bot I created called **Klochon**. The goal was to provide an easy way to retrieve *GTA:SA files* (specifically `gta3.img` files) to retrieve models straight from my Discord server.
+
+Before this project, I had little experience with Express or Sequelize. I built this API from scratch to power one of Klochon's commands: `/fetch`. The bot could call the API to fetch game files to use for modding on Discord.
+
+## Why I built it
+
+I was working on **Klochon**, a Discord bot for my own server. [I had around a 500+ member community](https://www.youtube.com/@elcascavel) and getting these files quickly saved a lot of time for modders. The bot could fetch files directly from the API, making it easier for users to access game assets without needing to browse the .img files and extract the .dff and .txd manually.
+
+I wanted to:
+
+- Allow querying the database from Discord  
+- Serve original extracted game files directly to my users
+
+This was my opportunity to learn more about:
+
+- Building APIs
+- Using **Sequelize** to model a MySQL DB
+- Handling **CORS** so the bot could call the API
+- Serving static files through **Express**
+
+## What I learned
+
+Looking back, building `gta-api` taught me:
+
+- How to structure a basic **Express app**
+- How to model DB tables using **Sequelize models**  
+- How to serve **static files**
+
+This was all before ChatGPT, a lot of it was figuring things out myself.
+
+## How it worked
+After joining the Discord, users could use the `fetch` command to retrieve files. The bot would call the API and reply with the files.
+
+>Example: `/fetch gta3 file: Colt45`
+
+The bot would then query the API, which would return the files `colt45.dff` and `colt45.txd` from the `gta3.img` archive.
+<figure className="w-full">
+    <img src="https://1kbqkuz15gkrdwbb.public.blob.vercel-storage.com/assets/discord_msg-f0xBUcNa0u6gPeejLs4S0ARn1UNQGv.png" alt="1938 results in the Discord channel" className="w-full h-auto rounded shadow" />
+    <figcaption className="mt-2 text-sm text-center text-drac-marcelin-200">The channel nearly reached 2000 messages!</figcaption>
+</figure>
+
+<figure className="w-full mt-4 max-w-2xl mx-auto">
+    <img src="https://1kbqkuz15gkrdwbb.public.blob.vercel-storage.com/assets/bot_being_used-zFZAy03j2oD8yJOTuJyICVcHzp424d.png" alt="1938 results in the Discord channel" className="w-full h-auto rounded shadow" />
+    <figcaption className="mt-2 text-sm text-center text-drac-marcelin-200">The bot returning the gamefiles</figcaption>
+</figure>
+
+## Wrapping up
+
+Even though this was a small project, it was one of the first times I built something that connected a database, an API, and an actual live bot used by real people. 
+
+At the time I had little knowledge of API design or production systems! Everything was built from scratch through trial and error. This project taught me the basics of building services and made me a lot more comfortable with Express, Sequelize, and serving files through HTTP.
+
+It also showed me the value of writing tools for communities I was part of. By automating something that used to be slow and manual (extracting files from gta3.img), the bot saved time for 500+ members and became a central part of my Discord server's modding workflow.
+
+If I were to rebuild this today, I'd add pagination, proper validation, Swagger docs, rate limiting, support for all 3D era GTA games, and perhaps a web interface to browse these files.
+
+Unfortunately, due to costs, I shut down the bot and since I never hosted the API, it no longer exists. Perhaps I'll revisit it in the future.
