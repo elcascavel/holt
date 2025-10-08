@@ -24,7 +24,7 @@ export default function ProjectCard({ project }: { project: ProjectMetadata }) {
           <img
             src={project.image?.url}
             alt={project.image?.alt}
-            className="relative aspect-video w-full object-contain z-20"
+            className="relative aspect-video w-full object-contain z-10"
           />
         </div>
       ) : (
